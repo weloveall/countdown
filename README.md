@@ -1,1 +1,0 @@
-Pressing on "Sync" button will check and sync with server clock.
