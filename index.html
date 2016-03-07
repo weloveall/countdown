@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Final Countdown</title>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 </head>
 <body>
+<div id="counter-bar"></div><input type="button" id="sync" value="Sync">
+<script type="text/javascript">
+    $("#counter-bar")
+       .countdown("2017/01/01", function(event) {
+        $(this).text(event.strftime('%D days %H:%M:%S'));
+    });
 
+    $("#sync").on('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        $.ajax({
+            url: 'time.php',
+            dataType: 'text',
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    });
+</script>
 </body>
 </html>
