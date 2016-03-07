@@ -1,0 +1,1 @@
+Press "Sync" button to synchronize with server time
